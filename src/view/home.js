@@ -98,13 +98,11 @@ if(user != null){
   
   const fileButton = home.querySelector(`#image-file`);  
   const uploader = home.querySelector(`#uploader`);  
-  console.log(uploader)
-
+  
   const btnSave = home.querySelector('#btn-save');
   btnSave.addEventListener('click',(e)=>{ 
     e.preventDefault() 
-    const imgPost = fileButton.files.length;
-          
+    const imgPost = fileButton.files.length;     // valor de la porpiedad length      
     const privacy = home.querySelector('#options-privacy').value;  
     const textPost = home.querySelector('#text-post').value;
     if(textPost === ''){
@@ -115,11 +113,11 @@ if(user != null){
     }
   });
 
-  //  cCARGANDO IMAGEN
-  fileButton.addEventListener('change', (e)=> {
-    
-    const  file = e.target.files[0];  
-    getImageLink(file,uploader);      
+  //  CARGANDO IMAGEN
+  fileButton.addEventListener('change', (e)=> {    
+    const  file = e.target.files[0];  // obtener el elemento cuando se habra la carpeta 
+    console.log(e.target.files)
+    getImageLink(file,uploader);     
     
   });
 }
